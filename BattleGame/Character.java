@@ -45,11 +45,13 @@ public class Character {
 	
 	public static double getRandom() {
 		Random rnd = new Random();
-		return rnd.nextDouble()*4+0.3;
+		return (rnd.nextInt(4)+3)/10.0;
 	}
 	
 	public static void main(String[] args) {
-		
+//		Random rnd=new Random();
+//		
+//		System.out.println((rnd.nextInt(4)+3)/10.0);
 //		Character.setSpells(FileIO.readSpells("spells.txt"));
 //		System.out.println(getSpells().size());
 	}
