@@ -1,7 +1,5 @@
-package battleGame;
-
-import java.util.Scanner;
-
+package BattleGame;
+import java.util.*;
 public class BattleGame {
 	public static void main(String[] args) {
 		playGame();
@@ -29,14 +27,14 @@ public class BattleGame {
 			if(i>Character.getSpells().size()-1)
 				break;
 		}
-		while(player.getCurrentHealth()>0&&enemy.getCurrentHealth()>0) {
+		while(player.getCurrentHealth()>=0&&enemy.getCurrentHealth()>=0) {
 			Scanner scan=new Scanner(System.in);
 			System.out.println("Attack  Or  Quit");
 			String command=scan.next();
 			command=command.toLowerCase();
 			if(command.equals("attack")) {
 				doAttack(player,enemy);
-				if(enemy.getCurrentHealth()<0)
+				if(enemy.getCurrentHealth()<=0)
 					break;
 				doAttack(enemy,player);
 				}
@@ -49,7 +47,7 @@ public class BattleGame {
 //				System.out.println("Attack Or Quit");
 				double damege=player.castSpell(command);
 				enemy.takeDam(damege);
-				if(enemy.getCurrentHealth()<0)
+				if(enemy.getCurrentHealth()<=0)
 					break;
 				doAttack(enemy,player);
 			}
@@ -70,6 +68,12 @@ public class BattleGame {
 		double damege=subject.cAttack();
 		System.out.println(subject.getName()+" attacks for "+damege+" damege !");
 		target.takeDam(damege);
+		if (target.getCurrentHealth()>0)
+			System.out.println(target);
+		else {
+			System.out.println("Name :   "+target.getName()+"   Health   :0");
+			System.out.println(target.getName()+" was knocked out!");
 		
+		}
 	}
 }

@@ -1,7 +1,5 @@
-package battleGame;
-
-import java.util.Random;
-
+package BattleGame;
+import java.util.*;
 public class Spell {
 	private String name;
 	private double minimumDamege;

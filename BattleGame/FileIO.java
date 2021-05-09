@@ -1,6 +1,6 @@
-package battleGame;
-import java.io.*;
+package BattleGame;
 import java.util.*;
+import java.io.*;
 public class FileIO {
 	public static  Character readCharacter(String filename) {
 		Character c=null;
@@ -72,5 +72,4 @@ public class FileIO {
 			throw new IllegalArgumentException("problems with file :"+ filename);
 		}
 	}
-
 }

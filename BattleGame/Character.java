@@ -1,4 +1,4 @@
-package battleGame;
+package BattleGame;
 import java.util.*;
 public class Character {
 	private	String name;
@@ -34,23 +34,19 @@ public class Character {
 	public void takeDam(double damege) {
 		this.currentHealthValue-=damege;
 		System.out.println(this.getName()+" takes "+damege+" damege !!");
-		if (this.getCurrentHealth()>0)
-			System.out.println(this);
-		else {
-			System.out.println("Name :   "+this.getName()+"   Health   :0");
-//			System.out.println(target.getName()+" was knocked out!");)
-		}
+		
+		
 		
 	}
 	
 	public static double getRandom() {
-		Random rnd = new Random();
-		return (rnd.nextInt(4)+3)/10.0;
+//		Random rnd = new Random();
+		return Math.round((Math.random()*0.4+0.3)*100)/100.0;
 	}
 	
 	public static void main(String[] args) {
 //		Random rnd=new Random();
-//		
+		
 //		System.out.println((rnd.nextInt(4)+3)/10.0);
 //		Character.setSpells(FileIO.readSpells("spells.txt"));
 //		System.out.println(getSpells().size());
